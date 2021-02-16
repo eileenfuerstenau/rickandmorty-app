@@ -1,0 +1,15 @@
+.Card {
+  display: grid;
+  justify-items: center;
+  padding: 20px;
+  background: #eee;
+  border-radius: 8px;
+}
+
+.Card__characterImg {
+  border-radius: 10px;
+}
+
+.Card__details {
+  display: grid;
+}
