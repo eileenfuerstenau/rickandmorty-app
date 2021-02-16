@@ -6,6 +6,10 @@
   border-radius: 8px;
 }
 
-.characterImg {
+.Card__characterImg {
   border-radius: 10px;
+}
+
+.Card__details {
+  display: grid;
 }
