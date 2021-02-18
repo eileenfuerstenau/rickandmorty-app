@@ -1,5 +1,4 @@
 import Card from '../Card'
-import Header from '../Header'
 import './App.css'
 import React, { useState, useEffect } from 'react'
 import getAllCharacters from '../../services/getAllCharacters'
@@ -16,7 +15,6 @@ function App() {
 
   return (
     <>
-      <Header title="Rick and Morty" />
       <div className="App">
         {characters.map(item => (
           <Card

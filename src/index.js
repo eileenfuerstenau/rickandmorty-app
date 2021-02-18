@@ -2,9 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from '../src/components/App'
 import reportWebVitals from './reportWebVitals'
+import Header from '../src/components/Header'
 
 ReactDOM.render(
   <React.StrictMode>
+    <Header title="Rick and Morty" />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
