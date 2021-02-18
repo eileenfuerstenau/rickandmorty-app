@@ -1,11 +1,26 @@
-import data from './rickandmortyapi.json'
 import Card from './Card'
 import './App.css'
+import React, { useState, useEffect } from 'react'
 
 function App() {
+  const [characters, setCharacters] = useState([])
+  useEffect(() => {
+    getAllCharacters()
+  })
+
+  function getAllCharacters(url = 'https://rickandmortyapi.com/api/character') {
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        setCharacters(oldState => [...oldState, ...data.results])
+        const nextUrl = data.info.next
+        nextUrl && getAllCharacters(nextUrl)
+      })
+  }
+
   return (
     <div className="App">
-      {data.results.map(item => (
+      {characters.map(item => (
         <Card
           key={item.id}
           name={item.name}
