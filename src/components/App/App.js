@@ -1,8 +1,8 @@
-import Card from './Card'
-import Header from './Header'
+import Card from '../Card'
+import Header from '../Header'
 import './App.css'
 import React, { useState, useEffect } from 'react'
-import getAllCharacters from '../src/services/getAllCharacters'
+import getAllCharacters from '../../services/getAllCharacters'
 
 function App() {
   const [characters, setCharacters] = useState([])
