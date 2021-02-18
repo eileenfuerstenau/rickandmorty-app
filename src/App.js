@@ -2,23 +2,17 @@ import Card from './Card'
 import Header from './Header'
 import './App.css'
 import React, { useState, useEffect } from 'react'
+import getAllCharacters from '../src/services/getAllCharacters'
 
 function App() {
   const [characters, setCharacters] = useState([])
 
   useEffect(() => {
-    getAllCharacters()
+    getAllCharacters({
+      url: 'https://rickandmortyapi.com/api/character',
+      setCharacters,
+    })
   }, [])
-
-  function getAllCharacters(url = 'https://rickandmortyapi.com/api/character') {
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        setCharacters(oldState => [...oldState, ...data.results])
-        const nextUrl = data.info.next
-        nextUrl && getAllCharacters(nextUrl)
-      })
-  }
 
   return (
     <>
