@@ -1,3 +1,22 @@
+.scroller {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  width: 300px;
+  height: 300px;
+  border: 5px solid lightgray;
+}
+
+.box {
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
 .Card {
   display: grid;
   justify-items: center;
@@ -13,3 +32,4 @@
 .Card__details {
   display: grid;
 }
+*/
