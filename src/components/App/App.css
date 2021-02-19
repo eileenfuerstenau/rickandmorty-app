@@ -5,4 +5,5 @@
   display: grid;
   gap: 15px;
   justify-content: center;
+  background-size: 100%;
 }

@@ -1,22 +1,32 @@
 import './Card.css'
 import { useState } from 'react'
 
-function Card({ name, species, image, gender, status, location }) {
+function Card({
+  name,
+  species,
+  image,
+  gender,
+  status,
+  location,
+  likeCharacter,
+  likedCharacters,
+  character,
+}) {
   const [isDetailsShown, setDetailsShown] = useState(false)
 
   return (
     <>
       <section className="scroller">
-        <div class="box">
+        <div className="box">
           {name} {species === 'Human' ? '👤' : '👽'}
           <br /> &rarr;
         </div>
-        <div class="box">
+        <div className="box">
           <img className="Card__characterImg" src={image} alt="" />
         </div>
-        <div class="box">
+        <div className="box">
           <button onClick={() => setDetailsShown(!isDetailsShown)}>
-            {isDetailsShown ? 'Hide' : 'Show more'}
+            {isDetailsShown ? 'Hide ➖ ' : 'Show more ➕'}
           </button>
           <section hidden={!isDetailsShown}>
             <ul>
@@ -25,6 +35,9 @@ function Card({ name, species, image, gender, status, location }) {
               <li> Origin: {location} </li>
             </ul>
           </section>
+          <button onClick={() => likeCharacter(character)}>
+            {likedCharacters.includes(character) ? 'Dislike 👎🏻' : 'Like 👍🏻'}
+          </button>
         </div>
       </section>
     </>
@@ -32,33 +45,3 @@ function Card({ name, species, image, gender, status, location }) {
 }
 
 export default Card
-
-/* 
-import './Card.css'
-import { useState } from 'react'
-
-function Card({ name, species, image, gender, status, location }) {
-  const [isDetailsShown, setDetailsShown] = useState(false)
-
-  return (
-    <>
-      <section className="Card">
-          {name} {species === 'Human' ? '👤' : '👽'}
-          <img className="Card__characterImg" src={image} alt="" />
-          <button onClick={() => setDetailsShown(!isDetailsShown)}>
-            {isDetailsShown ? 'Hide' : 'Show more'}
-          </button>
-          <section hidden={!isDetailsShown}>
-            <ul>
-              <li> Gender: {gender} </li>
-              <li> Status: {status} </li>
-              <li> Origin: {location} </li>
-            </ul>
-        </section>
-      </section>
-    </>
-  )
-}
-
-export default Card
-*/
