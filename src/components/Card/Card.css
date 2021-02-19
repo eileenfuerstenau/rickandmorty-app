@@ -1,15 +1,18 @@
-.Card {
-  display: grid;
-  justify-items: center;
-  padding: 20px;
-  background: #eee;
-  border-radius: 8px;
+.scroller {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  width: 300px;
+  height: 300px;
+  border: 5px solid lightgray;
 }
 
-.Card__characterImg {
-  border-radius: 10px;
-}
-
-.Card__details {
+.box {
+  background-color: rgba(255, 255, 255, 0.8);
+  flex: 1 0 100%;
+  scroll-snap-align: start;
   display: grid;
+  justify-content: center;
+  align-items: center;
 }
