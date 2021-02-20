@@ -27,33 +27,31 @@ function App() {
   }
 
   return (
-    <>
-      <div className="App">
-        <input
-          value={userInput}
-          onChange={event => setUserInput(event.target.value)}
-          placeholder="Search character..."
-        />
+    <div className="App">
+      <input
+        value={userInput}
+        onChange={event => setUserInput(event.target.value)}
+        placeholder="Search character..."
+      />
 
-        {characters
-          .filter(character =>
-            character.name.toLowerCase().includes(userInput.toLowerCase())
-          )
-          .map(item => (
-            <Card
-              character={item.id}
-              name={item.name}
-              species={item.species}
-              image={item.image}
-              gender={item.gender}
-              status={item.status}
-              location={item.origin.name}
-              likeCharacter={likeCharacter}
-              likedCharacters={likedCharacters}
-            />
-          ))}
-      </div>
-    </>
+      {characters
+        .filter(character =>
+          character.name.toLowerCase().includes(userInput.toLowerCase())
+        )
+        .map(item => (
+          <Card
+            character={item.id}
+            name={item.name}
+            species={item.species}
+            image={item.image}
+            gender={item.gender}
+            status={item.status}
+            location={item.origin.name}
+            likeCharacter={likeCharacter}
+            likedCharacters={likedCharacters}
+          />
+        ))}
+    </div>
   )
 }
 
