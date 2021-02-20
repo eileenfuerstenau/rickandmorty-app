@@ -4,7 +4,7 @@
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   width: 300px;
-  height: 300px;
+  height: 310px;
   border: 5px solid lightgray;
 }
 
@@ -14,5 +14,6 @@
   scroll-snap-align: start;
   display: grid;
   justify-content: center;
-  align-items: center;
+  align-content: center;
+  text-align: center;
 }

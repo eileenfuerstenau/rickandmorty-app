@@ -6,4 +6,25 @@
   gap: 15px;
   justify-content: center;
   background-size: 100%;
+  overflow-y: scroll;
+}
+
+.App__filterSection {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.App__sidebarOpener {
+  width: 100%;
+  border-radius: 2px;
+  border: 0;
+  height: 25px;
+}
+
+.App__inputSearchCharacter {
+  width: 100%;
+  border-radius: 2px;
+  border: 5px black;
+  height: 25px;
 }

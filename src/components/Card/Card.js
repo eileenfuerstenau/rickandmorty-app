@@ -26,7 +26,7 @@ function Card({
         </div>
         <div className="box">
           <button onClick={() => setDetailsShown(!isDetailsShown)}>
-            {isDetailsShown ? 'Hide ➖ ' : 'Show more ➕'}
+            {isDetailsShown ? 'Hide' : 'Show more'}
           </button>
           <section hidden={!isDetailsShown}>
             <ul>

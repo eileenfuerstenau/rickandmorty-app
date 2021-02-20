@@ -4,11 +4,14 @@ import App from '../src/components/App'
 import reportWebVitals from './reportWebVitals'
 import Header from '../src/components/Header'
 import './styles/base.css'
+import Grid from './components/Grid'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header title="Rick and Morty" />
-    <App />
+    <Grid>
+      <Header title="Rick and Morty" />
+      <App />
+    </Grid>
   </React.StrictMode>,
   document.getElementById('root')
 )
