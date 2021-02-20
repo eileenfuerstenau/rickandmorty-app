@@ -14,5 +14,6 @@
   scroll-snap-align: start;
   display: grid;
   justify-content: center;
-  align-items: center;
+  align-content: center;
+  text-align: center;
 }

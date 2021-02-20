@@ -1,4 +1,5 @@
 import Card from '../Card'
+import Sidebar from '../Sidebar'
 import './App.css'
 import React, { useState, useEffect } from 'react'
 import getAllCharacters from '../../services/getAllCharacters'
@@ -7,6 +8,7 @@ function App() {
   const [characters, setCharacters] = useState([])
   const [userInput, setUserInput] = useState('')
   const [likedCharacters, setLikedCharacters] = useState([])
+  const [isSidebarShown, setSidebarShown] = useState(false)
 
   useEffect(() => {
     getAllCharacters({
@@ -28,11 +30,25 @@ function App() {
 
   return (
     <div className="App">
-      <input
-        value={userInput}
-        onChange={event => setUserInput(event.target.value)}
-        placeholder="Search character..."
+      <Sidebar
+        title={'I am a sidebar'}
+        setSidebarShown={setSidebarShown}
+        isSidebarShown={isSidebarShown}
       />
+      <div>
+        <button
+          className="Sidebar_openBtn"
+          onClick={() => setSidebarShown(!isSidebarShown)}
+        >
+          Open Filters
+        </button>
+
+        <input
+          value={userInput}
+          onChange={event => setUserInput(event.target.value)}
+          placeholder="Search character..."
+        />
+      </div>
 
       {characters
         .filter(character =>
