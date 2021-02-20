@@ -35,9 +35,9 @@ function App() {
         setSidebarShown={setSidebarShown}
         isSidebarShown={isSidebarShown}
       />
-      <div>
+      <div className="App__filterSection">
         <button
-          className="Sidebar_openBtn"
+          className="App__sidebarOpener"
           onClick={() => setSidebarShown(!isSidebarShown)}
         >
           Open Filters
@@ -46,6 +46,7 @@ function App() {
         <input
           value={userInput}
           onChange={event => setUserInput(event.target.value)}
+          className="App__inputSearchCharacter"
           placeholder="Search character..."
         />
       </div>

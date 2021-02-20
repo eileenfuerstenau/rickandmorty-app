@@ -12,9 +12,9 @@ function Sidebar({ title, setSidebarShown, isSidebarShown }) {
           Close
         </button>
         <ul>
-          <li className="Sidebar__Filter">Filter</li>
-          <li>More filter</li>
-          <li>Whatever</li>
+          <li className="Sidebar__filters">Filter</li>
+          <li className="Sidebar__filters"> More filter</li>
+          <li className="Sidebar__filters">Whatever</li>
         </ul>
       </div>
     </>
