@@ -1,6 +1,14 @@
 import './Sidebar.css'
 
-function Sidebar({ title, setSidebarShown, isSidebarShown }) {
+function Sidebar({
+  title,
+  setSidebarShown,
+  isSidebarShown,
+  setLikedCharactersShown,
+  showLikedCharacters,
+  setNotLikedCharactersShown,
+  showNotLikedCharacters,
+}) {
   return (
     <>
       <div hidden={!isSidebarShown} className="Sidebar">
@@ -9,17 +17,29 @@ function Sidebar({ title, setSidebarShown, isSidebarShown }) {
           className="Sidebar__closeButton "
           onClick={() => setSidebarShown(!isSidebarShown)}
         >
-          <bold>x</bold> <img src="../../styles/close-button.png" alt="" />
+          x <img src="../../styles/close-button.png" alt="" />
         </button>
         <ul>
           <li className="Sidebar__filters">Liked Characters</li>
           <li className="Sidebar__filters">
-            <input type="checkbox" name="isLiked" value="liked" />
-            <label for="isLiked"> Liked</label>
+            <input
+              type="checkbox"
+              name="isLiked"
+              value="liked"
+              onClick={() => setLikedCharactersShown(!showLikedCharacters)}
+            />
+            <label htmlFor="isLiked"> Liked</label>
           </li>
           <li className="Sidebar__filters">
-            <input type="checkbox" name="isLiked" value="notLiked" />
-            <label for="isLiked"> Not Liked</label>
+            <input
+              type="checkbox"
+              name="isLiked"
+              value="notLiked"
+              onClick={() =>
+                setNotLikedCharactersShown(!showNotLikedCharacters)
+              }
+            />
+            <label htmlFor="isLiked"> Not Liked</label>
           </li>
         </ul>
       </div>
