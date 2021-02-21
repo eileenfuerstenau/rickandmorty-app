@@ -1,20 +1,22 @@
 .Sidebar {
   height: 100%;
-  width: 150px;
+  width: 40%;
   position: fixed;
   z-index: 1;
-  top: 0;
+  top: 48px;
   left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 60px;
+  padding-top: 50px;
   transition: 0.5s;
+  background-color: rgba(0, 0, 0, 0.95);
 }
 
 .Sidebar__filters {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
+  list-style: none;
+  color: white;
+}
+
+.Sidebar__closeButton {
+  position: absolute;
+  top: 20px;
+  right: 10px;
 }

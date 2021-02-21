@@ -9,6 +9,8 @@ function App() {
   const [userInput, setUserInput] = useState('')
   const [likedCharacters, setLikedCharacters] = useState([])
   const [isSidebarShown, setSidebarShown] = useState(false)
+  const [showLikedCharacters, setLikedCharactersShown] = useState(true)
+  const [showNotLikedCharacters, setNotLikedCharactersShown] = useState(true)
 
   useEffect(() => {
     getAllCharacters({
@@ -17,8 +19,8 @@ function App() {
     })
   }, [])
 
+  let newArray
   function likeCharacter(currentId) {
-    let newArray
     if (likedCharacters.includes(currentId)) {
       newArray = likedCharacters.filter(id => id !== currentId)
     } else {
@@ -31,9 +33,12 @@ function App() {
   return (
     <div className="App">
       <Sidebar
-        title={'I am a sidebar'}
         setSidebarShown={setSidebarShown}
         isSidebarShown={isSidebarShown}
+        setLikedCharactersShown={setLikedCharactersShown}
+        showLikedCharacters={showLikedCharacters}
+        setNotLikedCharactersShown={setNotLikedCharactersShown}
+        showNotLikedCharacters={showNotLikedCharacters}
       />
       <div className="App__filterSection">
         <button
@@ -55,6 +60,14 @@ function App() {
         .filter(character =>
           character.name.toLowerCase().includes(userInput.toLowerCase())
         )
+        .filter(
+          character =>
+            showLikedCharacters || likedCharacters.includes(character.id)
+        )
+        .filter(
+          character =>
+            showNotLikedCharacters || !likedCharacters.includes(character.id)
+        )
         .map(item => (
           <Card
             character={item.id}
@@ -73,3 +86,14 @@ function App() {
 }
 
 export default App
+
+/*    
+
+        .filter(
+          character => showLikedCharacters && newArray.includes(character.id)
+        )
+
+.filter(character => showLikedCharacters && likedCharacters.includes(character.id)) 
+
+onClick={() => setLikedCharactersShown(!showLikedCharacters)}
+*/
