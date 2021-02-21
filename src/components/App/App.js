@@ -73,3 +73,8 @@ function App() {
 }
 
 export default App
+
+/*         .filter(
+          character =>
+            filteredSpecies === 'all' || character.species === filteredSpecies
+        ) */

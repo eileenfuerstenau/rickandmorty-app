@@ -16,26 +16,32 @@ function Card({
 
   return (
     <>
-      <section className="scroller">
-        <div className="box">
+      <section className="Card__Scroller">
+        <div className="Card__Box">
           {name} {species === 'Human' ? '👤' : '👽'}
           <br /> &rarr;
         </div>
-        <div className="box">
+        <div className="Card__Box">
           <img className="Card__characterImg" src={image} alt="" />
         </div>
-        <div className="box">
-          <button onClick={() => setDetailsShown(!isDetailsShown)}>
+        <div className="Card__Box">
+          <button
+            className="Card__Button"
+            onClick={() => setDetailsShown(!isDetailsShown)}
+          >
             {isDetailsShown ? 'Hide' : 'Show more'}
           </button>
           <section hidden={!isDetailsShown}>
-            <ul>
+            <ul className="Card__DetailsList">
               <li> Gender: {gender} </li>
               <li> Status: {status} </li>
               <li> Origin: {location} </li>
             </ul>
           </section>
-          <button onClick={() => likeCharacter(character)}>
+          <button
+            className="Card__Button"
+            onClick={() => likeCharacter(character)}
+          >
             {likedCharacters.includes(character) ? 'Dislike 👎🏻' : 'Like 👍🏻'}
           </button>
         </div>
